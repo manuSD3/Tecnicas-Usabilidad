@@ -11,9 +11,9 @@
     <link rel="icon" type="image/png" href="../img/favicon.png">
   
 
-    <link rel="stylesheet" href="./formulario_registro.css">
+    <link rel="stylesheet" href="./formulario_registro.min.css">
     <title>Formulario de registro</title>
-    <script type="text/javascript" src="./validacion_registro.js"></script>
+    <!-- <script type="text/javascript" src="./validacion_registro.js"></script> -->
 
   </head>
   <body>
@@ -169,6 +169,15 @@
             <option value="mañanaYTarde">Mañana y tarde</option>
         </select>
 
+        <br>
+        <br>
+
+        <label for="rol" id="rol">Selecciona tu tipo de perfil:</label> 
+        <select id="rol" name="rol">
+            <option value="usuario">Usuario socio del centro</option>
+            <option value="admin">Administrador del sitio web</option>
+        </select>
+
           <br>
           <br>
           <br>
@@ -209,5 +218,6 @@
             </nav>
     </section>
 </footer>
+    <script type="text/javascript" src="./validacion_registro.min.js"></script>
   </body>
 </html>

@@ -101,7 +101,21 @@ if ($conexion -> connect_errno){
             <div class="derecha">
                <p><?php  echo $user['Actividad'];?></p>
             </div>
-        </div>   
+        </div>
+        <br>
+        <br>      
+        <br>
+        <div class="fila">
+            <div class="izquierda">
+                <label for="email">Rol: </label>
+            </div>
+            <div class="derecha">
+               <p><?php  echo $user['rol'];?></p>
+            </div>
+        </div> 
+        <br>
+        <br>
+        <button type="button" onclick="alert('En construcción')">Reservar una clase</button>     
         <br>
         <br>      
         <br>

@@ -10,6 +10,7 @@
     $actividades = $_POST['actividades'];
     $horario = $_POST['horario'];
     $pass2 = $_POST['pass2'];
+    $rol = $_POST['rol'];
       
     $pass = hash('sha512', $pass);
     $pass2 = hash('sha512', $pass2);
@@ -22,8 +23,8 @@
   
     # Comprueba los datos, si falta alguno te dirige a la misma página
     if (empty($nombre) || empty($fechaNacimiento) || empty($telefono)
-    || empty($email) || empty($pass)|| empty($sexo) 
-    || empty($actividades) || empty($horario)){
+    || empty($email) || empty($pass) || empty($sexo) 
+    || empty($actividades) || empty($horario) || empty($rol)){
 
         header('Location: formulario_registro.html');
 
@@ -32,8 +33,8 @@
 try {
     $conexion = new PDO('mysql:host=localhost;dbname=gym', 'root',''); 
 
-    $statement = $conexion->prepare('INSERT INTO Persons (email, nombre, telefono, contraseña, sexo, horario, actividad) VALUES (:email, :nombre, :telefono, :pass, :sexo, :horario, :actividades)');
-    $statement-> execute(array(':email' => $email, ':nombre' => $nombre, ':telefono' => $telefono,':pass'=>$pass, 'sexo'=> $sexo,':horario' => $horario, ':actividades'=>$actividades));
+    $statement = $conexion->prepare('INSERT INTO Persons (email, nombre, telefono, contraseña, sexo, horario, actividad, rol) VALUES (:email, :nombre, :telefono, :pass, :sexo, :horario, :actividades, :rol)');
+    $statement-> execute(array(':email' => $email, ':nombre' => $nombre, ':telefono' => $telefono,':pass'=>$pass, 'sexo'=> $sexo,':horario' => $horario, ':actividades'=>$actividades, ':rol'=>$rol));
    
     // enviarCorreo($email, $pass);
 

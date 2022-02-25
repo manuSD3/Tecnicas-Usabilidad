@@ -20,6 +20,19 @@ input[type=text], input[type=password], input[type=email], input[type=number], i
   border-radius: 4px;
 }
 
+button {
+  width: 100%;
+  resize: vertical;
+  font-family: var(--texto-logo-cabecera);
+  padding: 1px;
+  border: none;
+  border-radius: 4px;
+}
+
+button:hover{
+  background-color: #8f8f8f;
+}
+
 input[type=date] {
   margin-top: 2px;
   resize: none;
@@ -117,7 +130,7 @@ input[type=number] { -moz-appearance:textfield; }
 
 
 body {
-  background-image: url(../img/fotoFondoLogin.jpg);
+  background-image: url(../img/comprimidas/fotoFondoLogin.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;

@@ -33,7 +33,7 @@ a {
 }
 
 body {
-    background-image: url(../img/FondoHome.jpg);
+    background-image: url(../img/comprimidas/FondoHome.jpg);
 }
 .centrarFlex {
     display: flex;
@@ -173,7 +173,7 @@ body {
       justify-content: space-around;
       align-items: center;
 
-      ;
+      
   }
 
 .connect {

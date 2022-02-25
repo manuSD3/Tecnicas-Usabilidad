@@ -10,8 +10,7 @@ if ($conexion -> connect_errno){
     
     $pass = hash('sha512', $pass);
     if (empty($usuario) || empty($pass)){
-        
-        header('Location: FormularioLogin.html');
+        header('Location: FormularioLogin.html');    
     }else {
             try {
                 $stmt = $conexion->prepare("SELECT * FROM persons WHERE email = ? AND contraseña = ?");
@@ -26,7 +25,12 @@ if ($conexion -> connect_errno){
                 }else {
                     session_start();
                     $_SESSION['usuario'] = $usuario; 
-                    header('Location: datosUsuario.php');
+
+                    if ($user['rol'] == 'usuario') {
+                        header('Location: datosUsuario.php');
+                    } else if ($user['rol'] == 'admin') {
+                        header('Location: panelAdministrador.php');
+                    }
                 }
 
             }catch (PDOException $e){
